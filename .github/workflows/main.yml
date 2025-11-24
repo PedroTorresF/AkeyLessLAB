@@ -21,13 +21,12 @@ jobs:
             api-url: "https://csm.thalescryptolabs.com/akeyless-api/v2/"
             
         - name: Use Akeyless secret (environment variable)
-            env:
+          env:
               SECRET: ${{ env.my_first_secret }}
-            run: |
+          run: |
               # Use the secret securely within this step
               echo "Doing something with $SECRET"
-         - name: Use Akeyless secret (step output)
-             run: |
+        - name: Use Akeyless secret (step output)
+          run: |
                 # Use the secret securely within this step
-                echo "Doing something with ${{ steps.fetch-secrets.outputs.my_first_secret 
-        }}"
+                echo "Doing something with ${{ steps.fetch-secrets.outputs.my_first_secret }}"
